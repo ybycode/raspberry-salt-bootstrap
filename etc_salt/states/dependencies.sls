@@ -6,6 +6,7 @@ dependencies:
      - git
      - python-dev
      - python-virtualenv
+     - supervisor
      - tmux
      - vim
      - wget
