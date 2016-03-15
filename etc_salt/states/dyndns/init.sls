@@ -10,3 +10,7 @@ ddclient is installed:
     - group: root
     - mode: 600
     - unless: ls /etc/ddclient.conf
+
+ddclient:
+  service.running:
+    - enable: True
