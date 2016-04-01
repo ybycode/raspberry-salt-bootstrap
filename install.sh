@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# This script is to be run on the raspberry. It performs the following:
+# This performs the following:
 # - Sets the salt configuration files up,
 # - Runs salt to setup the raspberry.
 
@@ -12,7 +12,6 @@ echo "deb http://debian.saltstack.com/debian jessie-saltstack main" > /etc/apt/s
 apt-get update
 apt-get install -y git salt-minion
 
-# get the absolute directory path of this file:
 DIR=$(dirname $(readlink -f $0))
 cd $DIR
 

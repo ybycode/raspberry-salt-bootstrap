@@ -1,4 +1,4 @@
-ddclient is installed:
+fail2ban is installed:
   pkg.installed:
     - pkgs:
       - fail2ban

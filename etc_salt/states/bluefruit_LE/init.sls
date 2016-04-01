@@ -26,8 +26,8 @@ make sure the bluetooth service starts at boot:
 clone the Adafruit python library repo:
   git.latest:
     - name: https://github.com/adafruit/Adafruit_Python_BluefruitLE.git
-    - target: /home/pi/git/adafruit_Python_BluefruitLE
-    - user: pi
+    - target: /home/{{ grains['main_user'] }}/git/adafruit_Python_BluefruitLE
+    - user: {{ grains['main_user'] }}
     - require:
       - pkg: dependencies
     - require:
@@ -35,12 +35,12 @@ clone the Adafruit python library repo:
 
 install the python library from the repo:
   cmd.run:
-    - name: source /home/pi/venv/bin/activate && python setup.py install
-    - user: pi
-    - cwd: /home/pi/git/adafruit_Python_BluefruitLE
+    - name: source /home/{{ grains['main_user'] }}/venv/bin/activate && python setup.py install
+    - user: {{ grains['main_user'] }}
+    - cwd: /home/{{ grains['main_user'] }}/git/adafruit_Python_BluefruitLE
     - require:
       - sls: users
       - git: clone the Adafruit python library repo
       - virtualenv: Create the venv python virtualenv
-    - unless: ls /home/pi/venv/lib/python2.7/site-packages/Adafruit_BluefruitLE-0.9.0-py2.7.egg
+    - unless: ls /home/{{ grains['main_user'] }}/venv/lib/python2.7/site-packages/Adafruit_BluefruitLE-0.9.0-py2.7.egg
 

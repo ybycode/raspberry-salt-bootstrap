@@ -1,8 +1,9 @@
-pi:
+{{ grains['main_user'] }}:
   user.present:
     - fullname: raspberry pi
     - shell: /bin/bash
-    - home: /home/pi
+    - home: /home/{{ grains['main_user'] }}
     - groups:
+      - docker
       - sudo
       - video
